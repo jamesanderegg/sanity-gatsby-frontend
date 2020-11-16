@@ -1,5 +1,5 @@
 const sanityClient = require('@sanity/client');
-
+console.log("HELLLO WORLD")
 const {
   REACT_APP_SANITY_API_TOKEN,
   REACT_APP_SANITY_PROJECT_ID,
@@ -14,6 +14,7 @@ const client = sanityClient({
 });
 
 exports.handler = async (event, context) => {
+  console.log("HELLLO WORLD")
   if (event.httpMethod !== 'POST' || !event.body) {
     return {
       statusCode: 400,
