@@ -10,7 +10,7 @@ const client = sanityClient({
   projectId: REACT_APP_SANITY_PROJECT_ID,
   dataset: REACT_APP_SANITY_DATASET,
   token: REACT_APP_SANITY_API_TOKEN,
-  useCdn: true
+  useCdn: false
 });
 
 exports.handler = async (event, context) => {
@@ -21,7 +21,7 @@ exports.handler = async (event, context) => {
       body: ''
     };
   }
-
+  console.log("HELLLO WORLD LINE 24")
   let data;
   let hasVariantsToSync = false;
 
@@ -37,7 +37,7 @@ exports.handler = async (event, context) => {
       })
     };
   }
-
+  console.log("HELLLO WORLD LINE 40")
   // Shopify sends both Product Updates/Creations AND deletions as POST requests
   // Product Updates & Creations contain the entire product body, including titles, tags, images, handle, etc.
   // Product Deletions only contain a singular 'id'
