@@ -14,7 +14,7 @@ const HeaderComponent = props => {
   // run graphql queries, setState, useContext, etc.
   return (
     <Header>
-      <h1>Edit pages/index.js</h1>
+      <h1>Edit pages/index.js HELLO WORLD</h1>
     </Header>
   )
 }
