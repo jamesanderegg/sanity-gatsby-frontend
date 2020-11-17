@@ -88,6 +88,7 @@ exports.handler = async (event, context) => {
                 return response;
               })
               .catch(error => {
+                console.log('HELLO WORLD LINE 90')
                 console.error('Sanity error:', error);
                 return error;
               });
