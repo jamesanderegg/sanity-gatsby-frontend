@@ -113,6 +113,7 @@ exports.handler = async (event, context) => {
                   };
                 })
                 .catch(error => {
+                  console.log('HELLO WORLD LINE 116')
                   console.error('Sanity error:', error);
                   return error;
                 });
@@ -123,6 +124,7 @@ exports.handler = async (event, context) => {
               };
             }
           }).catch(error => {
+            console.log('HELLO WORLD LINE 127')
             console.error('Sanity error:', error);
 
             return {
@@ -141,6 +143,7 @@ exports.handler = async (event, context) => {
         }
       })
       .catch(error => {
+        console.log('HELLO WORLD LINE 146')
         console.error('Sanity error:', error);
 
         return {
@@ -165,6 +168,7 @@ exports.handler = async (event, context) => {
         console.log(`successfully marked ${data.id} as 'deleted'`)
       })
       .catch(error => {
+        console.log("HELLO WORLD LINE 171")
         console.error(`Sanity error:`, error)
       })
 

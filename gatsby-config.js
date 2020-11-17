@@ -1,9 +1,9 @@
 require("dotenv").config()
 module.exports = {
   siteMetadata: {
-    title: `change me`,
-    description: `change me`,
-    author: `your info here`,
+    title: `Blue CBD Organics`,
+    description: `An organic CBD company`,
+    author: `James Anderegg`,
   },
   plugins: [
     `gatsby-plugin-styled-components`,
