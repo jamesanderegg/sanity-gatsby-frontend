@@ -1,5 +1,4 @@
 const sanityClient = require('@sanity/client');
-console.log("HELLLO WORLD Line 2")
 const {
   REACT_APP_SANITY_API_TOKEN,
   REACT_APP_SANITY_PROJECT_ID,
@@ -14,7 +13,6 @@ const client = sanityClient({
 });
 
 exports.handler = async (event, context) => {
-  console.log("HELLLO WORLD LINE 17")
   if (event.httpMethod !== 'POST' || !event.body) {
     return {
       statusCode: 400,
@@ -37,7 +35,6 @@ exports.handler = async (event, context) => {
       })
     };
   }
-  console.log("HELLLO WORLD LINE 40")
   // Shopify sends both Product Updates/Creations AND deletions as POST requests
   // Product Updates & Creations contain the entire product body, including titles, tags, images, handle, etc.
   // Product Deletions only contain a singular 'id'
@@ -89,7 +86,7 @@ exports.handler = async (event, context) => {
               })
               .catch(error => {
                 console.log('HELLO WORLD LINE 90')
-                console.error('Sanity error:', error);
+                console.error('Sanity error 1:', error);
                 return error;
               });
           })).then(result => {
@@ -113,8 +110,7 @@ exports.handler = async (event, context) => {
                   };
                 })
                 .catch(error => {
-                  console.log('HELLO WORLD LINE 116')
-                  console.error('Sanity error:', error);
+                  console.error('Sanity error 2:', error);
                   return error;
                 });
             } else {
@@ -124,8 +120,7 @@ exports.handler = async (event, context) => {
               };
             }
           }).catch(error => {
-            console.log('HELLO WORLD LINE 127')
-            console.error('Sanity error:', error);
+            console.error('Sanity error 3:', error);
 
             return {
               statusCode: 500,
@@ -143,8 +138,7 @@ exports.handler = async (event, context) => {
         }
       })
       .catch(error => {
-        console.log('HELLO WORLD LINE 146')
-        console.error('Sanity error:', error);
+        console.error('Sanity error 4:', error);
 
         return {
           statusCode: 500,
@@ -168,8 +162,7 @@ exports.handler = async (event, context) => {
         console.log(`successfully marked ${data.id} as 'deleted'`)
       })
       .catch(error => {
-        console.log("HELLO WORLD LINE 171")
-        console.error(`Sanity error:`, error)
+        console.error(`Sanity error 5:`, error)
       })
 
     // *~* OR *~*
