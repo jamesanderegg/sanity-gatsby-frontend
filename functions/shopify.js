@@ -52,7 +52,7 @@ exports.handler = async (event, context) => {
         current: data.handle
       }
     };
-    console.log('********product:', product)
+    console.log('********************product:', product)
     
     return client
       .transaction()
