@@ -25,6 +25,7 @@ exports.handler = async (event, context) => {
 
   try {
     data = JSON.parse(event.body);
+    console.log('********data:', data)
   } catch (error) {
     console.error('JSON parsing error:', error);
 
@@ -51,7 +52,7 @@ exports.handler = async (event, context) => {
         current: data.handle
       }
     };
-
+    console.log('********product:', product)
     return client
       .transaction()
       .createIfNotExists(product)
