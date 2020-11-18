@@ -53,18 +53,6 @@ exports.handler = async (event, context) => {
       }
     };
     console.log('********product:', product)
-    try {
-      console.log("TRANSACIONT")
-      let tx = client.transaction()
-      console.log("CREATE")
-      tx = tx.createIfNotExists(product)
-      console.log("PATCH")
-      tx = tx.patch(data.id.toString(), patch => patch.set(product))
-      console.log("commit")
-      tx.commit().then(res => console.log("RESPONSE ", res))
-    } catch (e){
-      console.log(e)
-    }
     
     return client
       .transaction()
