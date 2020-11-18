@@ -53,6 +53,11 @@ exports.handler = async (event, context) => {
       }
     };
     console.log('********product:', product)
+
+    console.log("TRANSACIONT")
+    let tx = client.transaction()
+    console.log("CREATE")
+    tx = tx.createIfNotExists(product)
     return client
       .transaction()
       .createIfNotExists(product)
