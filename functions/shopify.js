@@ -61,7 +61,7 @@ exports.handler = async (event, context) => {
       console.log("PATCH")
       tx = tx.patch(data.id.toString(), patch => patch.set(product))
       console.log("commit")
-      tx.commit()
+      tx.commit().then(res => console.log("RESPONSE ", res))
     } catch (e){
       console.log(e)
     }
