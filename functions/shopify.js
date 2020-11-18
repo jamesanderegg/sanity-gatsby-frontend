@@ -19,13 +19,13 @@ exports.handler = async (event, context) => {
       body: ''
     };
   }
-  console.log("HELLLO WORLD LINE 24")
+ 
   let data;
   let hasVariantsToSync = false;
 
   try {
     data = JSON.parse(event.body);
-    console.log('********data:', data)
+    
   } catch (error) {
     console.error('JSON parsing error:', error);
 
@@ -52,7 +52,6 @@ exports.handler = async (event, context) => {
         current: data.handle
       }
     };
-    console.log('********************product:', product)
     
     return client
       .transaction()
@@ -87,7 +86,7 @@ exports.handler = async (event, context) => {
                 return response;
               })
               .catch(error => {
-                console.log('HELLO WORLD LINE 90')
+                
                 console.error('Sanity error 1:', error);
                 return error;
               });
